@@ -17,7 +17,7 @@ func (s *ConcurrentStore) Book(b Booking) error {
 	s.Lock()
 	defer s.Unlock()
 
-	if _, exists := s.bookings[b.SeatID]; exists { //TODO syntax _, exist
+	if _, exists := s.bookings[b.SeatID]; exists { 
 		return ErrSeatAlreadyBooked
 	}
 
